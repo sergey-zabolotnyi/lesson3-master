@@ -40,7 +40,7 @@ public class JpaCustomerService implements CustomerService {
 
     @Override
     public void add(Customer customer) {
-        JpaCustomer savedCustomer = repository.save(new JpaCustomer(0, customer.getName()));
+        JpaCustomer savedCustomer = repository.save(new JpaCustomer(0, customer.getName(), customer.getAge(),customer.getEmail()));
         cartRepository.save(new JpaCart(savedCustomer));
     }
 

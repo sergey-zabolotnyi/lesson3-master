@@ -11,5 +11,7 @@ public class CommonCustomer implements Customer {
 
     private int id;
     private String name;
+    private int age;
+    private String email;
     private Cart cart;
 }

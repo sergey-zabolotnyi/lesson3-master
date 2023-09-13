@@ -2,7 +2,11 @@ package de.telran.lesson3.controller_layer;
 
 import de.telran.lesson3.domain_layer.entity.common.CommonCustomer;
 import de.telran.lesson3.domain_layer.entity.Customer;
+import de.telran.lesson3.exception_layer.exceptions.CartOperationException;
+import de.telran.lesson3.exception_layer.exceptions.CustomerNotFoundException;
+import de.telran.lesson3.exception_layer.exceptions.EntityValidationException;
 import de.telran.lesson3.service_layer.CustomerService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,18 +21,30 @@ public class CustomerController implements Controller {
 
     @GetMapping
     public List<Customer> getAll() {
-        return service.getAll();
+        List<Customer> customerList = service.getAll();
+        if (customerList.size()==0){
+            throw new CustomerNotFoundException("There are no customers in the list");
+        }
+        return customerList;
     }
 
     @GetMapping("/{id}")
     public Customer getById(@PathVariable int id) {
-        return service.getById(id);
+        Customer customer = service.getById(id);
+        if (customer == null){
+            throw new CustomerNotFoundException("Customer with Id " + id + " not found");
+        }
+        return customer;
     }
 
     @PostMapping
-    public Customer add(@RequestBody CommonCustomer customer) {
-        service.add(customer);
-        return customer;
+    public Customer add(@Valid @RequestBody CommonCustomer customer) {
+        try {
+            service.add(customer);
+            return customer;
+        } catch (Exception e) {
+            throw new EntityValidationException(e.getMessage());
+        }
     }
 
     @GetMapping("/delete/{id}")
@@ -48,7 +64,11 @@ public class CustomerController implements Controller {
 
     @GetMapping("/total/{id}")
     public double getTotalPrice(@PathVariable int id) {
-        return service.getTotalPriceById(id);
+        double totalPrice = service.getTotalPriceById(id);
+        if (totalPrice == 0) {
+            throw new CartOperationException("Error calculating total price for customer with ID " + id);
+        }
+        return totalPrice;
     }
 
     @GetMapping("/average/{id}")

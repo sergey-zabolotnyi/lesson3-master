@@ -25,9 +25,11 @@ public class MySqlCustomerRepository implements CustomerRepository {
 
             while (resultSet.next()) {
                 String customerName = resultSet.getString(2);
-                int productId = resultSet.getInt(6);
-                String productName = resultSet.getString(7);
-                double productPrice = resultSet.getDouble(8);
+                int customerAge = resultSet.getInt(3);
+                String customerEmail = resultSet.getString(4);
+                int productId = resultSet.getInt(8);
+                String productName = resultSet.getString(9);
+                double productPrice = resultSet.getDouble(10);
                 Product product = new CommonProduct(productId, productName, productPrice);
 
                 if (map.containsKey(customerName)) {
@@ -40,7 +42,7 @@ public class MySqlCustomerRepository implements CustomerRepository {
                         cart.addProduct(product);
                     }
 
-                    Customer customer = new CommonCustomer(customerId, customerName, cart);
+                    Customer customer = new CommonCustomer(customerId, customerName, customerAge, customerEmail, cart);
                     map.put(customerName, customer);
                 }
             }
@@ -59,14 +61,16 @@ public class MySqlCustomerRepository implements CustomerRepository {
             Customer customer = null;
 
             while (resultSet.next()) {
-                int productId = resultSet.getInt(6);
-                String productName = resultSet.getString(7);
-                double productPrice = resultSet.getDouble(8);
+                int productId = resultSet.getInt(8);
+                String productName = resultSet.getString(9);
+                double productPrice = resultSet.getDouble(10);
                 Product product = new CommonProduct(productId, productName, productPrice);
 
                 if (customer == null) {
                     String customerName = resultSet.getString(2);
-                    customer = new CommonCustomer(id, customerName, new CommonCart());
+                    int customerAge = resultSet.getInt(3);
+                    String customerEmail = resultSet.getString(4);
+                    customer = new CommonCustomer(id, customerName, customerAge, customerEmail, new CommonCart());
                 }
 
                 if (productName != null) {

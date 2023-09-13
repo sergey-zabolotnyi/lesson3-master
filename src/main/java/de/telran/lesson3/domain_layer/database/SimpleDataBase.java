@@ -17,9 +17,9 @@ public class SimpleDataBase implements DataBase {
     private int currentProductId;
 
     public SimpleDataBase() {
-        customers.add(new CommonCustomer(1, "Vanya", new CommonCart()));
-        customers.add(new CommonCustomer(2, "Petya", new CommonCart()));
-        customers.add(new CommonCustomer(3, "Sidor", new CommonCart()));
+        customers.add(new CommonCustomer(1, "Vanya", 25, "ivan@mail.ru", new CommonCart()));
+        customers.add(new CommonCustomer(2, "Petya", 26, "petr@mail.ru", new CommonCart()));
+        customers.add(new CommonCustomer(3, "Sidor", 27, "sidor@mail.ru", new CommonCart()));
 
         products.add(new CommonProduct(1, "Banana", 150));
         products.add(new CommonProduct(2, "Apple", 120));
@@ -33,29 +33,29 @@ public class SimpleDataBase implements DataBase {
 
     @Override
     public void execute(String query) throws SQLException {
-        if (!query.startsWith("Add") && !query.startsWith("Delete")) {
-            throw new SQLException();
-        }
-
-        String[] parts = query.split(" ");
-
-        if (query.startsWith("Add")) {
-            if (parts[2].equals("customer")) {
-                customers.add(new CommonCustomer(++currentCustomerId, parts[5], new CommonCart()));
-            }
-            if (parts[2].equals("product")) {
-                products.add(new CommonProduct(++currentProductId, parts[5], Double.parseDouble(parts[8])));
-            }
-        }
-
-        if (query.startsWith("Delete")) {
-            if (parts[1].equals("customer")) {
-                customers.removeIf(x -> x.getId() == Integer.parseInt(parts[5]));
-            }
-            if (parts[1].equals("product")) {
-                products.removeIf(x -> x.getId() == Integer.parseInt(parts[5]));
-            }
-        }
+//        if (!query.startsWith("Add") && !query.startsWith("Delete")) {
+//            throw new SQLException();
+//        }
+//
+//        String[] parts = query.split(" ");
+//
+//        if (query.startsWith("Add")) {
+//            if (parts[2].equals("customer")) {
+//                customers.add(new CommonCustomer(++currentCustomerId, parts[5], new CommonCart()));
+//            }
+//            if (parts[2].equals("product")) {
+//                products.add(new CommonProduct(++currentProductId, parts[5], Double.parseDouble(parts[8])));
+//            }
+//        }
+//
+//        if (query.startsWith("Delete")) {
+//            if (parts[1].equals("customer")) {
+//                customers.removeIf(x -> x.getId() == Integer.parseInt(parts[5]));
+//            }
+//            if (parts[1].equals("product")) {
+//                products.removeIf(x -> x.getId() == Integer.parseInt(parts[5]));
+//            }
+//        }
     }
 
     @Override

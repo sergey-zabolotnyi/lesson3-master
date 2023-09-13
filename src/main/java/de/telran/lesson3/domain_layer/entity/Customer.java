@@ -6,5 +6,9 @@ public interface Customer {
 
     String getName();
 
+    int getAge();
+
+    String getEmail();
+
     Cart getCart();
 }
