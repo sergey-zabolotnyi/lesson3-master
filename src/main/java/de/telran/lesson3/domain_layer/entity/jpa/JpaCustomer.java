@@ -4,10 +4,14 @@ import de.telran.lesson3.domain_layer.entity.Cart;
 import de.telran.lesson3.domain_layer.entity.Customer;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Entity
 @Table(name = "customer")
 public class JpaCustomer implements Customer {
+
+    public static final Logger LOGGER = LoggerFactory.getLogger(JpaCustomer.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,14 +39,18 @@ public class JpaCustomer implements Customer {
     private JpaCart cart;
 
     public JpaCustomer() {
+        LOGGER.info(String.format("The empty constructor is applied"));
     }
 
     public JpaCustomer(int id, String name) {
+        LOGGER.info(String.format("The constructor with customer id - %d, and name - %s is applied", id, name));
         this.id = id;
         this.name = name;
     }
 
     public JpaCustomer(int id, String name, int age, String email) {
+        LOGGER.info(String.format("The constructor with customer id - %d, name - %s, age - %d, and email - %s is applied",
+                id, name, age, email));
         this.id = id;
         this.name = name;
         this.age = age;

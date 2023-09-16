@@ -1,0 +1,79 @@
+2023-09-16T12:48:11.022+02:00  INFO 1603 --- [main] de.telran.lesson3.Lesson3Application     : Starting Lesson3Application using Java 20.0.1 with PID 1603 (/Users/serg/Desktop/Projects/lesson3-master/target/classes started by serg in /Users/serg/Desktop/Projects/lesson3-master)
+2023-09-16T12:48:11.030+02:00  INFO 1603 --- [main] de.telran.lesson3.Lesson3Application     : No active profile set, falling back to 1 default profile: "default"
+2023-09-16T12:48:11.849+02:00  INFO 1603 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-16T12:48:11.922+02:00  INFO 1603 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
+2023-09-16T12:48:12.835+02:00  INFO 1603 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-16T12:48:12.847+02:00  INFO 1603 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-16T12:48:12.847+02:00  INFO 1603 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-16T12:48:12.945+02:00  INFO 1603 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-16T12:48:12.946+02:00  INFO 1603 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1869 ms
+2023-09-16T12:48:13.190+02:00  INFO 1603 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-16T12:48:13.272+02:00  INFO 1603 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-16T12:48:13.274+02:00  INFO 1603 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-16T12:48:13.492+02:00  INFO 1603 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T12:48:13.676+02:00  INFO 1603 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-16T12:48:13.708+02:00  INFO 1603 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-16T12:48:14.236+02:00  INFO 1603 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f06ebe0
+2023-09-16T12:48:14.238+02:00  INFO 1603 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-16T12:48:14.643+02:00  INFO 1603 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T12:48:15.363+02:00  INFO 1603 --- [main] d.t.l.domain_layer.entity.jpa.JpaCart    : The empty constructor is applied
+2023-09-16T12:48:15.385+02:00  INFO 1603 --- [main] d.t.l.d.entity.jpa.JpaCustomer           : The empty constructor is applied
+2023-09-16T12:48:15.559+02:00  INFO 1603 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-16T12:48:15.563+02:00  INFO 1603 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T12:48:16.412+02:00  INFO 1603 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-09-16T12:48:16.670+02:00  WARN 1603 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-16T12:48:17.515+02:00  INFO 1603 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-16T12:48:17.523+02:00  INFO 1603 --- [main] de.telran.lesson3.Lesson3Application     : Started Lesson3Application in 7.132 seconds (process running for 7.968)
+2023-09-16T12:56:19.114+02:00  INFO 1603 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-16T12:56:19.114+02:00  INFO 1603 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-16T12:56:19.116+02:00  INFO 1603 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-16T12:56:19.152+02:00  INFO 1603 --- [http-nio-8080-exec-2] d.t.lesson3.logging_layer.AspectLogging  : Метод getById класса de.telran.lesson3.service_layer.jpa.JpaProductService вызван с такими параметрами: [1]
+2023-09-16T12:56:19.152+02:00  INFO 1603 --- [http-nio-8080-exec-2] d.t.lesson3.logging_layer.AspectLogging  : Метод getById вызван с параметрами: [1]
+2023-09-16T12:56:19.154+02:00  INFO 1603 --- [http-nio-8080-exec-2] d.t.l.s.jpa.JpaProductService            : INFO Запрошен продукт с идентификатором 1.
+2023-09-16T12:56:19.154+02:00  WARN 1603 --- [http-nio-8080-exec-2] d.t.l.s.jpa.JpaProductService            : WARN Запрошен продукт с идентификатором 1.
+2023-09-16T12:56:19.155+02:00 ERROR 1603 --- [http-nio-8080-exec-2] d.t.l.s.jpa.JpaProductService            : ERROR Запрошен продукт с идентификатором 1.
+2023-09-16T12:56:19.247+02:00  INFO 1603 --- [http-nio-8080-exec-2] d.t.lesson3.logging_layer.AspectLogging  : Метод getById завершил свою работу
+2023-09-16T12:56:19.247+02:00  INFO 1603 --- [http-nio-8080-exec-2] d.t.lesson3.logging_layer.AspectLogging  : Метод getById класса JpaProductService успешно вернул продукт с идентификатором 1
+2023-09-16T12:56:19.248+02:00  INFO 1603 --- [http-nio-8080-exec-2] d.t.lesson3.logging_layer.AspectLogging  : Метод getById класса de.telran.lesson3.service_layer.jpa.JpaProductService выполнен с такими результатами: JpaProduct{id=1, name='Banana', price=150.0}
+2023-09-16T12:56:19.251+02:00  INFO 1603 --- [http-nio-8080-exec-2] d.t.lesson3.logging_layer.AspectLogging  : Метод getById класса de.telran.lesson3.service_layer.jpa.JpaProductService закончил свое выполнение.
+2023-09-16T12:58:51.876+02:00  INFO 1603 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T12:58:51.879+02:00  INFO 1603 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-16T12:58:51.885+02:00  INFO 1603 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-16T12:58:56.405+02:00  INFO 1707 --- [main] de.telran.lesson3.Lesson3Application     : Starting Lesson3Application using Java 20.0.1 with PID 1707 (/Users/serg/Desktop/Projects/lesson3-master/target/classes started by serg in /Users/serg/Desktop/Projects/lesson3-master)
+2023-09-16T12:58:56.407+02:00  INFO 1707 --- [main] de.telran.lesson3.Lesson3Application     : No active profile set, falling back to 1 default profile: "default"
+2023-09-16T12:58:56.901+02:00  INFO 1707 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-16T12:58:56.954+02:00  INFO 1707 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
+2023-09-16T12:58:57.595+02:00  INFO 1707 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-16T12:58:57.602+02:00  INFO 1707 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-16T12:58:57.603+02:00  INFO 1707 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-16T12:58:57.662+02:00  INFO 1707 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-16T12:58:57.662+02:00  INFO 1707 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1210 ms
+2023-09-16T12:58:57.890+02:00  INFO 1707 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-16T12:58:57.933+02:00  INFO 1707 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-16T12:58:57.935+02:00  INFO 1707 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-16T12:58:58.048+02:00  INFO 1707 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T12:58:58.187+02:00  INFO 1707 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-16T12:58:58.200+02:00  INFO 1707 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-16T12:58:58.469+02:00  INFO 1707 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@75dd0f94
+2023-09-16T12:58:58.470+02:00  INFO 1707 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-16T12:58:58.702+02:00  INFO 1707 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-16T12:58:59.159+02:00  INFO 1707 --- [main] d.t.l.domain_layer.entity.jpa.JpaCart    : The empty constructor is applied
+2023-09-16T12:58:59.171+02:00  INFO 1707 --- [main] d.t.l.d.entity.jpa.JpaCustomer           : The empty constructor is applied
+2023-09-16T12:58:59.275+02:00  INFO 1707 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-16T12:58:59.277+02:00  INFO 1707 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-16T12:58:59.950+02:00  INFO 1707 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-09-16T12:59:00.162+02:00  WARN 1707 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-16T12:59:00.932+02:00  INFO 1707 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-16T12:59:00.939+02:00  INFO 1707 --- [main] de.telran.lesson3.Lesson3Application     : Started Lesson3Application in 4.882 seconds (process running for 5.585)
+2023-09-16T12:59:07.805+02:00  INFO 1707 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-16T12:59:07.806+02:00  INFO 1707 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-16T12:59:07.807+02:00  INFO 1707 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-09-16T12:59:07.835+02:00  INFO 1707 --- [http-nio-8080-exec-1] d.t.lesson3.logging_layer.AspectLogging  : Метод getById класса JpaProductService вызван с такими параметрами: [1]
+2023-09-16T12:59:07.836+02:00  INFO 1707 --- [http-nio-8080-exec-1] d.t.lesson3.logging_layer.AspectLogging  : Метод getById вызван с параметрами: [1]
+2023-09-16T12:59:07.837+02:00  INFO 1707 --- [http-nio-8080-exec-1] d.t.l.s.jpa.JpaProductService            : INFO Запрошен продукт с идентификатором 1.
+2023-09-16T12:59:07.838+02:00  WARN 1707 --- [http-nio-8080-exec-1] d.t.l.s.jpa.JpaProductService            : WARN Запрошен продукт с идентификатором 1.
+2023-09-16T12:59:07.838+02:00 ERROR 1707 --- [http-nio-8080-exec-1] d.t.l.s.jpa.JpaProductService            : ERROR Запрошен продукт с идентификатором 1.
+2023-09-16T12:59:07.891+02:00  INFO 1707 --- [http-nio-8080-exec-1] d.t.lesson3.logging_layer.AspectLogging  : Метод getById завершил свою работу
+2023-09-16T12:59:07.891+02:00  INFO 1707 --- [http-nio-8080-exec-1] d.t.lesson3.logging_layer.AspectLogging  : Метод getById класса JpaProductService успешно вернул продукт с идентификатором 1
+2023-09-16T12:59:07.892+02:00  INFO 1707 --- [http-nio-8080-exec-1] d.t.lesson3.logging_layer.AspectLogging  : Метод getById класса JpaProductService выполнен с такими результатами: JpaProduct{id=1, name='Banana', price=150.0}
+2023-09-16T12:59:07.894+02:00  INFO 1707 --- [http-nio-8080-exec-1] d.t.lesson3.logging_layer.AspectLogging  : Метод getById класса JpaProductService закончил свое выполнение.

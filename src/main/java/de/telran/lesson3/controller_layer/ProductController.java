@@ -2,6 +2,7 @@ package de.telran.lesson3.controller_layer;
 
 import de.telran.lesson3.domain_layer.entity.common.CommonProduct;
 import de.telran.lesson3.domain_layer.entity.Product;
+import de.telran.lesson3.domain_layer.entity.jpa.JpaProduct;
 import de.telran.lesson3.exception_layer.Response;
 import de.telran.lesson3.exception_layer.exceptions.EntityValidationException;
 import de.telran.lesson3.exception_layer.exceptions.FirstTestException;
@@ -23,8 +24,9 @@ public class ProductController implements Controller {
 
     @GetMapping
     public List<Product> getAll() {
+        test(new JpaProduct(0, "TestNane", 300));
         List<Product> products = service.getAll();
-        if (products.size() == 7) {
+        if (products.size() == 0) {
             throw new ThirdTestException("Список продуктов пуст!");
         }
         return products;
@@ -68,5 +70,8 @@ public class ProductController implements Controller {
     @GetMapping("/average")
     public double getAverage() {
         return service.getAveragePrice();
+    }
+    public void test(JpaProduct product){
+        product.setName("New Name");
     }
 }

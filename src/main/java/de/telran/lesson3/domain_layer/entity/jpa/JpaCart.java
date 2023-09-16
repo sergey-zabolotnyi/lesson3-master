@@ -3,6 +3,8 @@ package de.telran.lesson3.domain_layer.entity.jpa;
 import de.telran.lesson3.domain_layer.entity.Cart;
 import de.telran.lesson3.domain_layer.entity.Product;
 import jakarta.persistence.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "cart")
 public class JpaCart implements Cart {
+    public static final Logger LOGGER = LoggerFactory.getLogger(JpaCart.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,9 +32,11 @@ public class JpaCart implements Cart {
     private List<JpaProduct> products;
 
     public JpaCart() {
+        LOGGER.info(String.format("The empty constructor is applied"));
     }
 
     public JpaCart(JpaCustomer customer) {
+        LOGGER.info(String.format("The constructor with customer name - %s is applied", customer.getName()));
         this.customer = customer;
     }
 
