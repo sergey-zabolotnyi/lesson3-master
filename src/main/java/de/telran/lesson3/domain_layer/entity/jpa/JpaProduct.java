@@ -63,6 +63,10 @@ public class JpaProduct implements Product {
         this.name = name;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "JpaProduct{" +
