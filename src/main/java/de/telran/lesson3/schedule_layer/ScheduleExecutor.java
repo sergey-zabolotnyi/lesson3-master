@@ -125,30 +125,30 @@ public class ScheduleExecutor {
 //Время выполнения предыдущей задачи не должно влиять на старт следующей.
 //Создавать новую задачу и логировать ничего не нужно.
 
-    @Scheduled(fixedDelay = 30000)
-    public void displayLastFiveTasks (){
-        List<Task> allTaskList = repository.findAll();
-        List<Task> fiveLastTasks = allTaskList.subList(allTaskList.size() - 5, allTaskList.size());
-        int count = 0;
-        for (Task task : fiveLastTasks){
-            System.out.println(++count + ". " + task.getDescription());
-        }
-
-    }
+//    @Scheduled(fixedDelay = 30000)
+//    public void displayLastFiveTasks (){
+//        List<Task> allTaskList = repository.findAll();
+//        List<Task> fiveLastTasks = allTaskList.subList(allTaskList.size() - 5, allTaskList.size());
+//        int count = 0;
+//        for (Task task : fiveLastTasks){
+//            System.out.println(++count + ". " + task.getDescription());
+//        }
+//
+//    }
 
 //2.Реализовать вывод в консоль последнего добавленного в БД товара.
 //Вывод должен производиться в 15 и 45 секунд каждой минуты. Задача должна быть сохранена в БД.
 //Вывод в консоль должен быть осуществлён через логирование поля description созданной задачи.
 //Пример значения поля description - "Последний добавленный в БД продукт - Банан".
 
-    @Scheduled(cron = "15,45 * * * * *")
-    public void displayLastAddProduct (){
-        String lastAddedProduct = productRepository.getLastAddedProduct();
-        String description = String.format("Последний добавленный в БД продукт - %s", lastAddedProduct);
-        Task lastProductTask = new Task(description);
-        logger.info(lastProductTask.getDescription());
-        repository.save(lastProductTask);
-    }
+//    @Scheduled(cron = "15,45 * * * * *")
+//    public void displayLastAddProduct (){
+//        String lastAddedProduct = productRepository.getLastAddedProduct();
+//        String description = String.format("Последний добавленный в БД продукт - %s", lastAddedProduct);
+//        Task lastProductTask = new Task(description);
+//        logger.info(lastProductTask.getDescription());
+//        repository.save(lastProductTask);
+//    }
 
 //3.После запроса конкретного продукта через 15 секунд отправить персональное предложение
 //на этот продукт с ценой на 5-10% (рандомно) ниже, чем базовая цена.
